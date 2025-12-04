@@ -16,14 +16,6 @@ namespace Nhom2_QuanLySinhVien
         {
             try
             {
-                //Cách 1: DisplayMember
-
-                //DataTable dt = TruyVan.LayDuLieuKhoa(); // Gọi phương thức lấy dữ liệu khoa
-                //cb_MaKhoa_Khanh.DisplayMember = "TenKhoa"; // Hiển thị tên khoa
-                //cb_MaKhoa_Khanh.ValueMember = "MaKhoa"; // Giá trị của combo box là mã khoa
-                //cb_MaKhoa_Khanh.DataSource = dt; // Gán dữ liệu cho combo box
-
-                //// Cách 2: Vòng lặp
                 foreach (DataRow item in TruyVan.LayDuLieuKhoa().Rows)
                 {
                     cb_MaKhoa_Khanh.Items.Add(item[0]);
@@ -75,7 +67,6 @@ namespace Nhom2_QuanLySinhVien
                 return;
             }
 
-            // Kiểm tra lớp học đã tồn tại chưa
             if (TruyVan.KiemTra(tb_MaLop_Khanh.Text))
             {
                 MessageBox.Show("Lớp học đã tồn tại. Vui lòng nhập mã lớp khác.", "Thông báo");
@@ -87,7 +78,6 @@ namespace Nhom2_QuanLySinhVien
             string khoaHoc = tb_KhoaHoc_Khanh.Text.Trim();
             string heDaoTao = tb_HeDaoTao_Khanh.Text.Trim();
             string namNhapHoc = tb_NamNhapHoc_Khanh.Text.Trim();
-            //string maKhoa = cb_MaKhoa_Khanh.SelectedValue?.ToString().Trim(); // Lấy mã khoa từ SelectedValue Cách 1
             string maKhoa = cb_MaKhoa_Khanh.SelectedItem.ToString().Trim(); // Lấy mã khoa từ SelectedItem Cách 2
             string query = "INSERT INTO LOPHOC (MaLop, TenLop, KhoaHoc, HeDaoTao, NamNhapHoc, MaKhoa) " +
                            "VALUES (@MaLop, @TenLop, @KhoaHoc, @HeDaoTao, @NamNhapHoc, @MaKhoa)";

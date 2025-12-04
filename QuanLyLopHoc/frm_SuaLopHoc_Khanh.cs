@@ -27,10 +27,10 @@ namespace Nhom2_QuanLySinhVien
         {
             try
             {
-                DataTable dt = TruyVan.LayDuLieuKhoa(); // Gọi phương thức lấy dữ liệu khoa
-                cb_MaKhoa_Khanh.DisplayMember = "TenKhoa"; // Hiển thị tên khoa
-                cb_MaKhoa_Khanh.ValueMember = "MaKhoa"; // Giá trị của combo box là mã khoa
-                cb_MaKhoa_Khanh.DataSource = dt; // Gán dữ liệu cho combo box
+                DataTable dt = TruyVan.LayDuLieuKhoa(); 
+                cb_MaKhoa_Khanh.DisplayMember = "TenKhoa"; 
+                cb_MaKhoa_Khanh.ValueMember = "MaKhoa"; 
+                cb_MaKhoa_Khanh.DataSource = dt;
             }
             catch (Exception ex)
             {
@@ -88,11 +88,10 @@ namespace Nhom2_QuanLySinhVien
                 return;
             }
 
-            // Kiểm tra nếu không có thay đổi nào so với thông tin ban đầu
             if (tenLop == TenLop && khoaHoc == KhoaHoc && heDaoTao == HeDaoTao && namNhapHoc == NamNhapHoc && maKhoa == MaKhoa)
             {
                 MessageBox.Show("Bạn chưa sửa thông tin nào.", "Thông báo");
-                return; // Dừng lại nếu không có thay đổi
+                return; 
             }
 
             string query = "UPDATE LOPHOC SET TenLop = @TenLop, KhoaHoc = @KhoaHoc, HeDaoTao = @HeDaoTao, NamNhapHoc = @NamNhapHoc, MaKhoa = @MaKhoa " +
@@ -108,7 +107,7 @@ namespace Nhom2_QuanLySinhVien
                 new SqlParameter("@MaKhoa", maKhoa)
             };
 
-            // Thực thi câu lệnh cập nhật dữ liệu
+            
             try
             {
                 int kq = TruyVan.ExecuteNonQuery(query, parameters);

@@ -54,7 +54,7 @@
             this.lbl_TieuDe_Khanh.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.lbl_TieuDe_Khanh.Location = new System.Drawing.Point(1, 0);
             this.lbl_TieuDe_Khanh.Name = "lbl_TieuDe_Khanh";
-            this.lbl_TieuDe_Khanh.Size = new System.Drawing.Size(928, 48);
+            this.lbl_TieuDe_Khanh.Size = new System.Drawing.Size(1028, 48);
             this.lbl_TieuDe_Khanh.TabIndex = 0;
             this.lbl_TieuDe_Khanh.Text = "TÍNH ĐIỂM THI";
             this.lbl_TieuDe_Khanh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 676);
+            this.ClientSize = new System.Drawing.Size(1029, 676);
             this.Controls.Add(this.btn_LuuTatCa_Khanh);
             this.Controls.Add(this.dgv_DiemThi_Khanh);
             this.Controls.Add(this.grb_ThongTin_Khanh);
@@ -196,6 +196,7 @@
             this.Name = "frm_DiemThi_Khanh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_DiemThi_Khanh";
+            this.Load += new System.EventHandler(this.frm_DiemThi_Khanh_Load);
             this.grb_ThongTin_Khanh.ResumeLayout(false);
             this.grb_ThongTin_Khanh.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DiemThi_Khanh)).EndInit();

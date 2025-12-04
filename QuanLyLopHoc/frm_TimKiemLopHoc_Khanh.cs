@@ -21,7 +21,7 @@ namespace Nhom2_QuanLySinhVien
         public frm_TimKiemLopHoc_Khanh(DataTable dt)
         {
             InitializeComponent();
-            danhSachLop = dt; // Lưu danh sách lớp vào biến
+            danhSachLop = dt;
         }
         private void HienThiDanhSachLop()
         {
@@ -29,17 +29,17 @@ namespace Nhom2_QuanLySinhVien
         }
         private void frm_TimKiem_Khanh_Load(object sender, EventArgs e)
         {
-            LoadDanhSachKhoa(); // Load danh sách khoa vào ComboBox
-            HienThiDanhSachLop(); // Hiển thị danh sách lớp
+            LoadDanhSachKhoa();
+            HienThiDanhSachLop(); 
         }
         private void LoadDanhSachKhoa()
         {
             try
             {
-                cb_Khoa_Khanh.DataSource = TruyVan.LayDuLieuKhoa(); // Lấy danh sách khoa từ cơ sở dữ liệu
+                cb_Khoa_Khanh.DataSource = TruyVan.LayDuLieuKhoa();
                 cb_Khoa_Khanh.DisplayMember = "TenKhoa";
                 cb_Khoa_Khanh.ValueMember = "MaKhoa";
-                cb_Khoa_Khanh.SelectedIndex = -1; // Không chọn khoa nào ban đầu
+                cb_Khoa_Khanh.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -51,11 +51,10 @@ namespace Nhom2_QuanLySinhVien
             string tuKhoa = tb_TuKhoa_Khanh.Text.Trim();
             string maKhoa = cb_Khoa_Khanh.SelectedValue?.ToString();
 
-            // Kiểm tra nếu cả ô từ khóa và ô khoa đều trống
             if (string.IsNullOrEmpty(tuKhoa) && string.IsNullOrEmpty(maKhoa))
             {
                 MessageBox.Show("Không tìm thấy lớp học phù hợp với từ khóa và khoa đã chọn.", "Thông báo");
-                return; // Kết thúc phương thức, không thực hiện tìm kiếm
+                return;
             }
 
             try

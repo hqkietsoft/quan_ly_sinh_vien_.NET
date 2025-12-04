@@ -46,7 +46,6 @@ namespace Nhom2_QuanLySinhVien
 			}	
 			else
 			{
-				MessageBox.Show("Đăng nhập thành công.", "Đăng nhập hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				TrangChu f = new TrangChu();
 				this.Hide();
 				f.ShowDialog();
@@ -64,6 +63,36 @@ namespace Nhom2_QuanLySinhVien
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			MessageBox.Show("Liên hệ Admin để cấp lại mật khẩu!", "Quên mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
+
+		private void btn_DangNhap_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(txt_TenDangNhap_Bac.Text.Trim()))
+			{
+				lb_ThongBaoDangNhap_Bac.Text = "Bạn chưa nhập tên đăng nhập!";
+				txt_TenDangNhap_Bac.Focus();
+			}
+			else if (string.IsNullOrEmpty(txt_MatKhau_Bac.Text.Trim()))
+			{
+				lb_ThongBaoDangNhap_Bac.Text = "Bạn chưa nhập mật khẩu!";
+				txt_MatKhau_Bac.Focus();
+			}
+			else if (login.checkLogin(txt_TenDangNhap_Bac.Text, txt_MatKhau_Bac.Text) == 0)
+			{
+				lb_ThongBaoDangNhap_Bac.Text = "Tên đăng nhập và mật khẩu không đúng!";
+			}
+			else
+			{
+				
+				TrangChu f = new TrangChu();
+				this.Hide();
+				f.ShowDialog();
+			}
+		}
+
+		private void guna2Button1_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
 		}
 	}
 }

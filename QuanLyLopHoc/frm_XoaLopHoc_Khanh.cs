@@ -26,7 +26,7 @@ namespace Nhom2_QuanLySinhVien
         {
             try
             {
-                cb_MaLop_Khanh.DataSource = TruyVan.LayDanhSachMaLop(); // Cập nhật danh sách mã lớp
+                cb_MaLop_Khanh.DataSource = TruyVan.LayDanhSachMaLop();
                 cb_MaLop_Khanh.DisplayMember = "MaLop";
                 cb_MaLop_Khanh.ValueMember = "MaLop";
             }
@@ -104,7 +104,7 @@ namespace Nhom2_QuanLySinhVien
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi xóa lớp học: " + ex.Message, "Lỗi");
+                    MessageBox.Show("Lớp này đang có sinh viên theo học.", "Lỗi");
                 }
             }
         }

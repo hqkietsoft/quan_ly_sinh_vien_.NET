@@ -21,6 +21,7 @@ namespace Nhom2_QuanLySinhVien
             InitializeComponent();
             sinhvien = SinhVien.SV;
             sinhvien.Show_All(dgv_HoSoSinhVien);
+            PhanQuyenSinhVien();
         }
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
@@ -48,9 +49,9 @@ namespace Nhom2_QuanLySinhVien
             }
             if (Program.loaiND == 3 || Program.loaiND == 4)// Giáo viên và sinh viên
             {
-                btn_Them.Visible = false;
-                btn_Sua.Visible = false;
-                btn_Xoa.Visible = false;
+                btn_Them.Enabled = false;
+                btn_Sua.Enabled = false;
+                btn_Xoa.Enabled = false;
             }
             
         }
@@ -64,7 +65,7 @@ namespace Nhom2_QuanLySinhVien
                 sinhvien.NgaySinh1 = dgv_HoSoSinhVien.Rows[e.RowIndex].Cells[3].Value.ToString();
                 sinhvien.GioiTinh1 = dgv_HoSoSinhVien.Rows[e.RowIndex].Cells[4].Value.ToString();
                 sinhvien.QueQuan1 = dgv_HoSoSinhVien.Rows[e.RowIndex].Cells[5].Value.ToString();
-                sinhvien.SoDT1 = int.Parse(dgv_HoSoSinhVien.Rows[e.RowIndex].Cells[6].Value.ToString());
+                sinhvien.SoDT1 = dgv_HoSoSinhVien.Rows[e.RowIndex].Cells[6].Value.ToString();
                 sinhvien.MaLop1 = dgv_HoSoSinhVien.Rows[e.RowIndex].Cells[7].Value.ToString();
                 sinhvien.TenDN1 = dgv_HoSoSinhVien.Rows[e.RowIndex].Cells[8].Value.ToString();
             }
@@ -79,6 +80,12 @@ namespace Nhom2_QuanLySinhVien
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
+            if (sinhvien.MaLop1 == null)
+            {
+                MessageBox.Show("Chưa chọn sinh viên để sửa dữ liệu", "Sửa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             frm_SuaSinhVien_Huyen Sua = new frm_SuaSinhVien_Huyen();
             Sua.ShowDialog();
             sinhvien.Show_All(dgv_HoSoSinhVien);
@@ -86,7 +93,12 @@ namespace Nhom2_QuanLySinhVien
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            frm_XoaSinhVien_Huyen Xoa = new frm_XoaSinhVien_Huyen();
+			if (sinhvien.MaLop1 == null)
+			{
+				MessageBox.Show("Chưa chọn sinh viên để sửa dữ liệu", "Sửa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+			frm_XoaSinhVien_Huyen Xoa = new frm_XoaSinhVien_Huyen();
             Xoa.ShowDialog();
             sinhvien.Show_All(dgv_HoSoSinhVien);
         }
@@ -94,10 +106,10 @@ namespace Nhom2_QuanLySinhVien
         private void btn_Thoat_Click(object sender, EventArgs e)
         {
 
-            DialogResult dialog = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialog = MessageBox.Show("Bạn chắc chắn muốn thoát khỏi chức năng quản lý hồ sơ sinh viên?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
             {
-                Application.Exit();
+                this.Close();
             }
         }
 
@@ -109,6 +121,7 @@ namespace Nhom2_QuanLySinhVien
         private void btn_SapXep_Click(object sender, EventArgs e)
         {
             dgv_HoSoSinhVien.DataSource = sinhvien.SapXep();
+            MessageBox.Show("Đã sắp xếp danh sách sinh viên theo tên của sinh viên", "Sắp xếp", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)

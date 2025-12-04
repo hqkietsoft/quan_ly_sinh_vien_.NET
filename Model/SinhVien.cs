@@ -15,7 +15,7 @@ namespace Nhom2_QuanLySinhVien.Model
     {
         
         private string MaSV, HoDem, Ten, NgaySinh, GioiTinh, QueQuan, MaLop, TenDN;
-        private int SoDT;
+        private string SoDT;
         private static SinhVien instance;
         KetnoiModel kn = new KetnoiModel();
         SqlCommand command;
@@ -43,7 +43,7 @@ namespace Nhom2_QuanLySinhVien.Model
         public string QueQuan1 { get => QueQuan; set => QueQuan = value; }
         public string MaLop1 { get => MaLop; set => MaLop = value; }
         public string TenDN1 { get => TenDN; set => TenDN = value; }
-        public int SoDT1 { get => SoDT; set => SoDT = value; }
+        public string SoDT1 { get => SoDT; set => SoDT = value; }
 
         #region Hiển thi lên DataGridView
         
@@ -184,10 +184,12 @@ namespace Nhom2_QuanLySinhVien.Model
             }
         }
 
-        public void Them(string masv, string hodem, string ten, DateTimePicker ngaysinh, string gioitinh , string quequan, string sdt, string malop, ComboBox cbbTenDN)
+        public void Them(string masv, string hodem, string ten, DateTimePicker ngaysinh, string gioitinh, string quequan, string sdt, string malop, ComboBox cbbTenDN)
         {
 
-            string tendn = cbbTenDN.SelectedItem.ToString();
+            //string tendn = cbbTenDN.SelectedItem.ToString();
+            string tendn = cbbTenDN.Text;
+
 
             if (Check_Ma_TenDN(masv))
             {
@@ -201,6 +203,11 @@ namespace Nhom2_QuanLySinhVien.Model
             {
                 try
                 {
+                    string sqlThemNguoiDung = "INSERT INTO NGUOIDUNG VALUES (@tendn,'1111',4)";
+                    SqlCommand cmd = new SqlCommand(sqlThemNguoiDung, kn.openConnection());
+                    cmd.Parameters.AddWithValue("@tendn", tendn);
+                    cmd.ExecuteNonQuery();
+                    kn.closeConnection();
                     string sqlThem = "INSERT INTO SinhVien (MaSV, HoDem, Ten, NgaySinh, GioiTinh, QueQuan, SoDT, MaLop, TenDN) " +
                                      "VALUES (@MaSV, @HoDem, @Ten, @NgaySinh, @GioiTinh, @QueQuan, @SoDT, @MaLop, @TenDN)";
                     command = new SqlCommand(sqlThem, kn.openConnection());
@@ -215,7 +222,7 @@ namespace Nhom2_QuanLySinhVien.Model
                     command.Parameters.AddWithValue("@TenDN", tendn);  // Use the selected TenDN
                     command.ExecuteNonQuery();
                     kn.closeConnection();
-                    MessageBox.Show($"Thêm mới sinh viên {ten} thành công", "Thêm sinh viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Thêm mới sinh viên {ten} thành công.\n Mật khẩu của bạn là \'1111\'.", "Thêm sinh viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

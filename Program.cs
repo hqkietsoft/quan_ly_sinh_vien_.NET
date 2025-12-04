@@ -17,7 +17,7 @@ namespace Nhom2_QuanLySinhVien
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new TrangChu());
+			Application.Run(new frm_Login());
 		}
 	}
 }

@@ -1,6 +1,8 @@
 ﻿using Guna.UI2.WinForms;
+using Nhom2_QuanLySinhVien.Model;
 using Nhom2_QuanLySinhVien.QuanLyDiem;
 using Nhom2_QuanLySinhVien.QuanLyMonHoc;
+using Nhom2_QuanLySinhVien.QuanLyNguoiDung;
 using QuanLySinhVien_Nhom2.Resources;
 using System;
 using System.Collections.Generic;
@@ -21,21 +23,31 @@ namespace Nhom2_QuanLySinhVien
             InitializeComponent();
             btn_show.Visible = false;
             guna2PictureBox2.Visible = false;
+            panelND.Visible = false;
             this.StartPosition = FormStartPosition.CenterScreen;
             Home h = new Home();
             addUserControl(h);
+            panelND.BringToFront();
         }
 
         private void PhanQuyen()
         {
-            if (Program.loaiND == 3) //Giáo Viên
+            if(Program.loaiND == 2)// phongdao tao
+            {
+                btnDMK.Enabled = false;
+			}
+			if (Program.loaiND == 3) //Giáo Viên
             {
                 btnHSSV.Enabled = false;
                 btnBCTK.Enabled = false;
-            }
-            if (Program.loaiND == 4)//Sinh Viên
+				btnDMK.Enabled = false;
+
+
+			}
+			if (Program.loaiND == 4)//Sinh Viên
             {
                 btnBCTK.Enabled = false;
+                btnDMK.Enabled = false;
             }
         }
 
@@ -72,6 +84,7 @@ namespace Nhom2_QuanLySinhVien
             guna2Panel1.Width = 254;
             guna2Transition1.ShowSync(guna2Panel1);
         }
+
         public void LoadLopHocPhanUserControl()
         {
             LopHocPhan lopHocPhanUC = new LopHocPhan();
@@ -86,11 +99,6 @@ namespace Nhom2_QuanLySinhVien
             }
         }
 
-        //private void guna2Button3_Click(object sender, EventArgs e)
-        //{
-        //    LoadLopHocPhanUserControl();
-        //}
-
         private void addUserControl(UserControl function)
         {
             function.Dock = DockStyle.Fill;
@@ -99,6 +107,7 @@ namespace Nhom2_QuanLySinhVien
             function.BringToFront();
         }
 
+        #region Chưa dùng
         private void panelMain_Paint(object sender, PaintEventArgs e)
         {
 
@@ -123,6 +132,7 @@ namespace Nhom2_QuanLySinhVien
         {
 
         }
+        #endregion
 
         private void btnLHP_Click(object sender, EventArgs e)
         {
@@ -163,11 +173,11 @@ namespace Nhom2_QuanLySinhVien
         private void btnHSSV_Click(object sender, EventArgs e)
         {
             frm_HoSoSinhVien d = new frm_HoSoSinhVien();
-            d.TopLevel = false; // Đảm bảo form không ở mức cửa sổ chính
-            d.Dock = DockStyle.Fill; // Làm cho form chiếm toàn bộ diện tích của panel
-            panelMain.Controls.Add(d); // Thêm form vào panel
+            d.TopLevel = false;
+            d.Dock = DockStyle.Fill; 
+            panelMain.Controls.Add(d); 
             d.BringToFront();
-            d.Show(); // Hiển thị form con
+            d.Show();
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
@@ -204,5 +214,53 @@ namespace Nhom2_QuanLySinhVien
             d.BringToFront();
             d.Show();
         }
-    }
+
+        private void btnQLND_Click_1(object sender, EventArgs e)
+        {
+            if (panelND.Visible)
+            {
+                panelND.Visible = false;
+            }
+            else
+            {
+                panelND.Visible = true;
+                panelND.BringToFront();
+            }
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TrangChu_Load_1(object sender, EventArgs e)
+        {
+            PhanQuyen();
+            if (AutoScaleMode == AutoScaleMode.Font)
+            {
+                AutoScaleMode = AutoScaleMode.None;
+            }
+        }
+
+        private void btnTTND_Click(object sender, EventArgs e)
+        {
+            frm_ThongTinNguoiDung_Bac f = new frm_ThongTinNguoiDung_Bac();
+            f.ShowDialog();
+        }
+
+        private void btnDMK_Click(object sender, EventArgs e)
+        {
+            frm_DoiMatKhau_Bac f = new frm_DoiMatKhau_Bac();
+            f.ShowDialog();
+        }
+
+		private void btnDangXuat_Click(object sender, EventArgs e)
+		{
+            if(DialogResult.Yes == MessageBox.Show("Bạn có muốn đăng xuất khỏi phần mềm không ?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                Application.Restart();
+            }
+		}
+	}
 }

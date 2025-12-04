@@ -37,6 +37,9 @@ namespace Nhom2_QuanLySinhVien
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_show = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.panelND = new System.Windows.Forms.Panel();
+            this.btnDMK = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTTND = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLND = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
@@ -56,6 +59,7 @@ namespace Nhom2_QuanLySinhVien
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel1.SuspendLayout();
+            this.panelND.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panelMain.SuspendLayout();
@@ -69,6 +73,7 @@ namespace Nhom2_QuanLySinhVien
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Black;
             this.guna2Panel1.Controls.Add(this.btn_show);
+            this.guna2Panel1.Controls.Add(this.panelND);
             this.guna2Panel1.Controls.Add(this.btnQLND);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
             this.guna2Panel1.Controls.Add(this.guna2Separator2);
@@ -104,7 +109,7 @@ namespace Nhom2_QuanLySinhVien
             this.btn_show.ForeColor = System.Drawing.Color.White;
             this.btn_show.Image = ((System.Drawing.Image)(resources.GetObject("btn_show.Image")));
             this.btn_show.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_show.Location = new System.Drawing.Point(48, 544);
+            this.btn_show.Location = new System.Drawing.Point(48, 540);
             this.btn_show.Name = "btn_show";
             this.btn_show.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btn_show.Size = new System.Drawing.Size(46, 40);
@@ -112,12 +117,75 @@ namespace Nhom2_QuanLySinhVien
             this.btn_show.UseTransparentBackground = true;
             this.btn_show.Click += new System.EventHandler(this.btn_show_Click_1);
             // 
+            // panelND
+            // 
+            this.panelND.Controls.Add(this.btnDMK);
+            this.panelND.Controls.Add(this.btnTTND);
+            this.guna2Transition1.SetDecoration(this.panelND, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.panelND.Location = new System.Drawing.Point(20, 637);
+            this.panelND.Name = "panelND";
+            this.panelND.Size = new System.Drawing.Size(211, 73);
+            this.panelND.TabIndex = 5;
+            // 
+            // btnDMK
+            // 
+            this.btnDMK.Animated = true;
+            this.btnDMK.BackColor = System.Drawing.Color.Transparent;
+            this.btnDMK.BorderColor = System.Drawing.Color.White;
+            this.btnDMK.BorderRadius = 8;
+            this.btnDMK.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDMK.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDMK.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2Transition1.SetDecoration(this.btnDMK, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnDMK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDMK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDMK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDMK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDMK.FillColor = System.Drawing.Color.White;
+            this.btnDMK.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDMK.ForeColor = System.Drawing.Color.Black;
+            this.btnDMK.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.btnDMK.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDMK.Location = new System.Drawing.Point(4, 39);
+            this.btnDMK.Name = "btnDMK";
+            this.btnDMK.Size = new System.Drawing.Size(201, 30);
+            this.btnDMK.TabIndex = 13;
+            this.btnDMK.Text = "Đổi mật khẩu";
+            this.btnDMK.UseTransparentBackground = true;
+            this.btnDMK.Click += new System.EventHandler(this.btnDMK_Click);
+            // 
+            // btnTTND
+            // 
+            this.btnTTND.Animated = true;
+            this.btnTTND.BackColor = System.Drawing.Color.Transparent;
+            this.btnTTND.BorderColor = System.Drawing.Color.White;
+            this.btnTTND.BorderRadius = 8;
+            this.btnTTND.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnTTND.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTTND.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2Transition1.SetDecoration(this.btnTTND, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnTTND.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTTND.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTTND.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTTND.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTTND.FillColor = System.Drawing.Color.White;
+            this.btnTTND.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTTND.ForeColor = System.Drawing.Color.Black;
+            this.btnTTND.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.btnTTND.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTTND.Location = new System.Drawing.Point(4, 3);
+            this.btnTTND.Name = "btnTTND";
+            this.btnTTND.Size = new System.Drawing.Size(201, 30);
+            this.btnTTND.TabIndex = 12;
+            this.btnTTND.Text = "Thông tin người dùng";
+            this.btnTTND.UseTransparentBackground = true;
+            this.btnTTND.Click += new System.EventHandler(this.btnTTND_Click);
+            // 
             // btnQLND
             // 
             this.btnQLND.Animated = true;
             this.btnQLND.BackColor = System.Drawing.Color.Transparent;
             this.btnQLND.BorderRadius = 8;
-            this.btnQLND.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQLND.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnQLND.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLND.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
@@ -127,17 +195,18 @@ namespace Nhom2_QuanLySinhVien
             this.btnQLND.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnQLND.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnQLND.FillColor = System.Drawing.Color.Transparent;
-            this.btnQLND.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLND.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnQLND.ForeColor = System.Drawing.Color.White;
             this.btnQLND.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.btnQLND.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLND.Location = new System.Drawing.Point(13, 583);
+            this.btnQLND.Location = new System.Drawing.Point(13, 579);
             this.btnQLND.Name = "btnQLND";
             this.btnQLND.Size = new System.Drawing.Size(226, 57);
             this.btnQLND.TabIndex = 11;
             this.btnQLND.Text = "            Quản lý người dùng";
             this.btnQLND.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLND.UseTransparentBackground = true;
+            this.btnQLND.Click += new System.EventHandler(this.btnQLND_Click_1);
             // 
             // guna2PictureBox2
             // 
@@ -157,7 +226,7 @@ namespace Nhom2_QuanLySinhVien
             // guna2Separator2
             // 
             this.guna2Transition1.SetDecoration(this.guna2Separator2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Separator2.Location = new System.Drawing.Point(26, 558);
+            this.guna2Separator2.Location = new System.Drawing.Point(26, 554);
             this.guna2Separator2.Name = "guna2Separator2";
             this.guna2Separator2.Size = new System.Drawing.Size(16, 10);
             this.guna2Separator2.TabIndex = 5;
@@ -177,7 +246,7 @@ namespace Nhom2_QuanLySinhVien
             this.btn_hide.ForeColor = System.Drawing.Color.White;
             this.btn_hide.Image = ((System.Drawing.Image)(resources.GetObject("btn_hide.Image")));
             this.btn_hide.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_hide.Location = new System.Drawing.Point(228, 544);
+            this.btn_hide.Location = new System.Drawing.Point(228, 540);
             this.btn_hide.Name = "btn_hide";
             this.btn_hide.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btn_hide.Size = new System.Drawing.Size(51, 40);
@@ -202,18 +271,19 @@ namespace Nhom2_QuanLySinhVien
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.btnDangXuat.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangXuat.Location = new System.Drawing.Point(13, 646);
+            this.btnDangXuat.Location = new System.Drawing.Point(13, 632);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(226, 57);
             this.btnDangXuat.TabIndex = 8;
             this.btnDangXuat.Text = "            Đăng xuất";
             this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangXuat.UseTransparentBackground = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // guna2Separator1
             // 
             this.guna2Transition1.SetDecoration(this.guna2Separator1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Separator1.Location = new System.Drawing.Point(28, 558);
+            this.guna2Separator1.Location = new System.Drawing.Point(28, 554);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(188, 10);
             this.guna2Separator1.TabIndex = 7;
@@ -237,7 +307,7 @@ namespace Nhom2_QuanLySinhVien
             this.btnBCTK.ForeColor = System.Drawing.Color.White;
             this.btnBCTK.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.btnBCTK.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBCTK.Location = new System.Drawing.Point(13, 472);
+            this.btnBCTK.Location = new System.Drawing.Point(13, 470);
             this.btnBCTK.Name = "btnBCTK";
             this.btnBCTK.Size = new System.Drawing.Size(226, 57);
             this.btnBCTK.TabIndex = 6;
@@ -265,7 +335,7 @@ namespace Nhom2_QuanLySinhVien
             this.btnLH.ForeColor = System.Drawing.Color.White;
             this.btnLH.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.btnLH.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLH.Location = new System.Drawing.Point(13, 220);
+            this.btnLH.Location = new System.Drawing.Point(13, 218);
             this.btnLH.Name = "btnLH";
             this.btnLH.Size = new System.Drawing.Size(226, 57);
             this.btnLH.TabIndex = 5;
@@ -293,7 +363,7 @@ namespace Nhom2_QuanLySinhVien
             this.btnMH.ForeColor = System.Drawing.Color.White;
             this.btnMH.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.btnMH.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMH.Location = new System.Drawing.Point(13, 283);
+            this.btnMH.Location = new System.Drawing.Point(13, 281);
             this.btnMH.Name = "btnMH";
             this.btnMH.Size = new System.Drawing.Size(226, 57);
             this.btnMH.TabIndex = 4;
@@ -321,7 +391,7 @@ namespace Nhom2_QuanLySinhVien
             this.btnLHP.ForeColor = System.Drawing.Color.White;
             this.btnLHP.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.btnLHP.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLHP.Location = new System.Drawing.Point(13, 346);
+            this.btnLHP.Location = new System.Drawing.Point(13, 344);
             this.btnLHP.Name = "btnLHP";
             this.btnLHP.Size = new System.Drawing.Size(226, 57);
             this.btnLHP.TabIndex = 3;
@@ -349,7 +419,7 @@ namespace Nhom2_QuanLySinhVien
             this.btnDiem.ForeColor = System.Drawing.Color.White;
             this.btnDiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.btnDiem.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiem.Location = new System.Drawing.Point(13, 409);
+            this.btnDiem.Location = new System.Drawing.Point(13, 407);
             this.btnDiem.Name = "btnDiem";
             this.btnDiem.Size = new System.Drawing.Size(226, 57);
             this.btnDiem.TabIndex = 2;
@@ -454,7 +524,7 @@ namespace Nhom2_QuanLySinhVien
             this.guna2Transition1.SetDecoration(this.guna2ControlBox1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(911, 10);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(910, 10);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(24, 25);
             this.guna2ControlBox1.TabIndex = 4;
@@ -474,7 +544,9 @@ namespace Nhom2_QuanLySinhVien
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TrangChu";
             this.Text = "TrangChu";
+            this.Load += new System.EventHandler(this.TrangChu_Load_1);
             this.guna2Panel1.ResumeLayout(false);
+            this.panelND.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panelMain.ResumeLayout(false);
@@ -505,5 +577,8 @@ namespace Nhom2_QuanLySinhVien
         private Guna.UI2.WinForms.Guna2Panel panelMain;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2Button btnQLND;
+        private Panel panelND;
+        private Guna.UI2.WinForms.Guna2Button btnDMK;
+        private Guna.UI2.WinForms.Guna2Button btnTTND;
     }
 }

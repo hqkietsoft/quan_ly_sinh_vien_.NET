@@ -21,14 +21,15 @@ namespace Nhom2_QuanLySinhVien
         public frm_QuanLyLopHoc_Khanh()
         {
             InitializeComponent();
+            PhanQuyen();
         }
         public void PhanQuyen()
         {
             if (Program.loaiND == 3 || Program.loaiND == 4) // sinh vien
             {
-                btn_Them.Visible = false;
-                btn_Sua.Visible = false;
-                btn_Xoa.Visible = false;
+                btn_Them.Enabled = false;
+                btn_Sua.Enabled = false;
+                btn_Xoa.Enabled = false;
             }
         }
         #region NÚT THÊM
@@ -112,32 +113,10 @@ namespace Nhom2_QuanLySinhVien
         {
             HienThi();
         }
-        //public void connect()
-        //{
-        //    //Tạo kết nối
-        //    string ketnoi;
-        //    ketnoi = "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=QUANLYSINHVIEN;Integrated Security=True";
-        //    conn = new SqlConnection(ketnoi);
-        //    conn.Open();
-        //}
-        //public void dongketnoi()
-        //{
-        //    if (conn != null && conn.State == ConnectionState.Open)
-        //        conn.Close();
-        //}
         public void HienThi()
         {
             try
             {
-                //Cách 1: 
-                //connect();
-                //string sql = "SELECT * FROM LOPHOC";
-                //sqlda = new SqlDataAdapter(sql, conn);
-                //ds = new DataSet();
-                //sqlda.Fill(ds);
-                //dgv_QuanLyLopHoc_Khanh.DataSource = ds.Tables[0];
-
-                //Cách 2: Sử dụng class Truy Vấn riêng
                 string sql = "SELECT * FROM LOPHOC";
                 DataSet ds = TruyVan.ExecuteQuery(sql);
                 dgv_QuanLyLopHoc_Khanh.DataSource = ds.Tables[0];
@@ -171,6 +150,7 @@ namespace Nhom2_QuanLySinhVien
                     }
                 }
                 dgv_QuanLyLopHoc_Khanh.DataSource = dt;
+                MessageBox.Show("Đã sắp xếp danh sách lớp học theo tên lớp", "Sắp xếp", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -178,5 +158,10 @@ namespace Nhom2_QuanLySinhVien
             }
         }
         #endregion
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

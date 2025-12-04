@@ -23,6 +23,7 @@ namespace Nhom2_QuanLySinhVien
             connectDB = new ConnectionData(conString);
         }
 
+        #region LoadData
         private void LoadData()
         {
             string query = "SELECT * FROM LopHocPhan";
@@ -40,6 +41,7 @@ namespace Nhom2_QuanLySinhVien
                 guna2DataGridView1.Rows[rowIndex].Cells["Nam"].Value = row["Nam"];
             }
         }
+        #endregion 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
             if (this.Parent != null)
@@ -54,7 +56,17 @@ namespace Nhom2_QuanLySinhVien
             
         }
 
+        public void PhanQuyen()
+        {
+            if (Program.loaiND == 3 || Program.loaiND == 4)
+            {
+                btnXoa.Enabled = false;
+                guna2Button4.Enabled = false;
+                btnThem.Enabled = false;
+            }
+        }
 
+        #region Đếm mã lớp
         private void MaLopCount()
         {
             int count = guna2DataGridView1.Rows.Cast<DataGridViewRow>()
@@ -62,7 +74,7 @@ namespace Nhom2_QuanLySinhVien
 
             label3.Text = $"{count}";
         }
-
+        #endregion
         private void panel3_Resize(object sender, EventArgs e)
         {
             int buttonCount = panel3.Controls.OfType<Button>().Count();
@@ -250,6 +262,7 @@ namespace Nhom2_QuanLySinhVien
         {
             LoadData();
             MaLopCount();
+            PhanQuyen();
         }
     }
 }

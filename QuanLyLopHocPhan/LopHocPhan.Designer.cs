@@ -31,7 +31,7 @@ namespace Nhom2_QuanLySinhVien
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Guna2Button guna2Button1;
+            Guna.UI2.WinForms.Guna2Button btnThem;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -58,7 +58,7 @@ namespace Nhom2_QuanLySinhVien
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -66,36 +66,36 @@ namespace Nhom2_QuanLySinhVien
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2Button1
+            // btnThem
             // 
-            guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            guna2Button1.Animated = true;
-            guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            guna2Button1.BorderRadius = 8;
-            guna2Button1.BorderThickness = 1;
-            guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            guna2Button1.CheckedState.BorderColor = System.Drawing.Color.White;
-            guna2Button1.CheckedState.FillColor = System.Drawing.Color.White;
-            guna2Button1.CheckedState.ForeColor = System.Drawing.Color.Black;
-            guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            guna2Button1.ForeColor = System.Drawing.Color.White;
-            guna2Button1.HoverState.BorderColor = System.Drawing.Color.White;
-            guna2Button1.HoverState.FillColor = System.Drawing.Color.White;
-            guna2Button1.HoverState.ForeColor = System.Drawing.Color.Black;
-            guna2Button1.Location = new System.Drawing.Point(149, -3);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.PressedColor = System.Drawing.Color.Transparent;
-            guna2Button1.Size = new System.Drawing.Size(188, 59);
-            guna2Button1.TabIndex = 10;
-            guna2Button1.Text = "Thêm";
-            guna2Button1.UseTransparentBackground = true;
-            guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnThem.Animated = true;
+            this.btnThem.BackColor = System.Drawing.Color.Transparent;
+            this.btnThem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.btnThem.BorderRadius = 8;
+            this.btnThem.BorderThickness = 1;
+            this.btnThem.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnThem.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.btnThem.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnThem.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btnThem.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnThem.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnThem.Location = new System.Drawing.Point(149, -3);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.PressedColor = System.Drawing.Color.Transparent;
+            this.btnThem.Size = new System.Drawing.Size(188, 59);
+            this.btnThem.TabIndex = 10;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseTransparentBackground = true;
+            this.btnThem.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2ControlBox1
             // 
@@ -306,7 +306,7 @@ namespace Nhom2_QuanLySinhVien
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.Controls.Add(this.btnXoa);
             this.panel3.Controls.Add(this.guna2Button4);
-            this.panel3.Controls.Add(guna2Button1);
+            this.panel3.Controls.Add(this.btnThem);
             this.panel3.Location = new System.Drawing.Point(0, 636);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(946, 79);
@@ -468,6 +468,7 @@ namespace Nhom2_QuanLySinhVien
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button btnThem;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
     }
 }

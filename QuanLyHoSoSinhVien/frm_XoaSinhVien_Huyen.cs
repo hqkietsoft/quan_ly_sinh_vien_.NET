@@ -14,8 +14,7 @@ namespace Nhom2_QuanLySinhVien
     public partial class frm_XoaSinhVien_Huyen : Form
     {
         private readonly SinhVien svXoa;
-        private string HoDem, Ten, NgaySinh, GioiTinh, QueQuan, MaLop;
-        private int SoDT;
+        private string HoDem, Ten, NgaySinh, GioiTinh, QueQuan, MaLop,SoDT;
         int no0Column = 0;
         
         public frm_XoaSinhVien_Huyen()

@@ -207,6 +207,18 @@
     <Compile Include="BaoCaoThongKe\BCTK.Designer.cs">
       <DependentUpon>BCTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_DangNhap_Bac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DangNhap_Bac.Designer.cs">
+      <DependentUpon>frm_DangNhap_Bac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ConnectionData.cs" />
     <Compile Include="Model\Diem.cs" />
     <Compile Include="Model\SinhVien.cs" />
@@ -241,12 +253,6 @@
     <Compile Include="QuanLyHoSoSinhVien\frm_HoSoSinhVien.Designer.cs">
       <DependentUpon>frm_HoSoSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyHoSoSinhVien\frm_SapXepSinhVien_Huyen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyHoSoSinhVien\frm_SapXepSinhVien_Huyen.Designer.cs">
-      <DependentUpon>frm_SapXepSinhVien_Huyen.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLyHoSoSinhVien\frm_SuaSinhVien_Huyen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,12 +264,6 @@
     </Compile>
     <Compile Include="QuanLyHoSoSinhVien\frm_ThemSinhVien_Huyen.Designer.cs">
       <DependentUpon>frm_ThemSinhVien_Huyen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyHoSoSinhVien\frm_TimKiemSinhVien_Huyen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyHoSoSinhVien\frm_TimKiemSinhVien_Huyen.Designer.cs">
-      <DependentUpon>frm_TimKiemSinhVien_Huyen.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyHoSoSinhVien\frm_XoaSinhVien_Huyen.cs">
       <SubType>Form</SubType>
@@ -294,12 +294,6 @@
     </Compile>
     <Compile Include="QuanLyLopHoc\frm_QuanLyLopHoc_Khanh.Designer.cs">
       <DependentUpon>frm_QuanLyLopHoc_Khanh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyLopHoc\frm_SapXepLopHoc_Khanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyLopHoc\frm_SapXepLopHoc_Khanh.Designer.cs">
-      <DependentUpon>frm_SapXepLopHoc_Khanh.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyLopHoc\frm_SuaLopHoc_Khanh.cs">
       <SubType>Form</SubType>
@@ -355,23 +349,17 @@
     <Compile Include="QuanLyMonHoc\frm_XoaMonHoc_Bac.Designer.cs">
       <DependentUpon>frm_XoaMonHoc_Bac.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\KetnoiModel.cs" />
+    <Compile Include="Model\Login.cs" />
+    <Compile Include="Model\MonHoc.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyNguoiDung\frm_DoiMatKhau_Bac.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLyNguoiDung\frm_DoiMatKhau_Bac.Designer.cs">
       <DependentUpon>frm_DoiMatKhau_Bac.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_DangNhap_Bac.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_DangNhap_Bac.Designer.cs">
-      <DependentUpon>frm_DangNhap_Bac.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Model\KetnoiModel.cs" />
-    <Compile Include="Model\Login.cs" />
-    <Compile Include="Model\MonHoc.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyNguoiDung\frm_ThongTinNguoiDung_Bac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -399,6 +387,12 @@
     <EmbeddedResource Include="BaoCaoThongKe\Report.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_DangNhap_Bac.resx">
+      <DependentUpon>frm_DangNhap_Bac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyDiem\frm_DiemQuaTrinh_Huyen.resx">
       <DependentUpon>frm_DiemQuaTrinh_Huyen.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,17 +408,11 @@
     <EmbeddedResource Include="QuanLyHoSoSinhVien\frm_HoSoSinhVien.resx">
       <DependentUpon>frm_HoSoSinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyHoSoSinhVien\frm_SapXepSinhVien_Huyen.resx">
-      <DependentUpon>frm_SapXepSinhVien_Huyen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyHoSoSinhVien\frm_SuaSinhVien_Huyen.resx">
       <DependentUpon>frm_SuaSinhVien_Huyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyHoSoSinhVien\frm_ThemSinhVien_Huyen.resx">
       <DependentUpon>frm_ThemSinhVien_Huyen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyHoSoSinhVien\frm_TimKiemSinhVien_Huyen.resx">
-      <DependentUpon>frm_TimKiemSinhVien_Huyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyHoSoSinhVien\frm_XoaSinhVien_Huyen.resx">
       <DependentUpon>frm_XoaSinhVien_Huyen.cs</DependentUpon>
@@ -440,9 +428,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyLopHoc\frm_QuanLyLopHoc_Khanh.resx">
       <DependentUpon>frm_QuanLyLopHoc_Khanh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyLopHoc\frm_SapXepLopHoc_Khanh.resx">
-      <DependentUpon>frm_SapXepLopHoc_Khanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyLopHoc\frm_SuaLopHoc_Khanh.resx">
       <DependentUpon>frm_SuaLopHoc_Khanh.cs</DependentUpon>
@@ -468,12 +453,6 @@
     <EmbeddedResource Include="QuanLyMonHoc\frm_XoaMonHoc_Bac.resx">
       <DependentUpon>frm_XoaMonHoc_Bac.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyNguoiDung\frm_DoiMatKhau_Bac.resx">
-      <DependentUpon>frm_DoiMatKhau_Bac.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_DangNhap_Bac.resx">
-      <DependentUpon>frm_DangNhap_Bac.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -484,6 +463,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QuanLyNguoiDung\frm_DoiMatKhau_Bac.resx">
+      <DependentUpon>frm_DoiMatKhau_Bac.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNguoiDung\frm_ThongTinNguoiDung_Bac.resx">
       <DependentUpon>frm_ThongTinNguoiDung_Bac.cs</DependentUpon>
     </EmbeddedResource>
@@ -516,14 +498,19 @@
     <None Include="Resources\HomePage.png" />
     <None Include="Resources\Home.png" />
     <Content Include="Resources\online-learning.png" />
+    <None Include="Resources\padlock %282%29.png" />
     <Content Include="Resources\pie-chart.png" />
     <None Include="Resources\pie-chart1.png" />
     <Content Include="Resources\profile.png" />
     <Content Include="Resources\Remove-bg.ai_1730155457765.png" />
+    <None Include="Resources\Remove-bg.ai_1731338835822.png" />
     <Content Include="Resources\scoreboard.png" />
     <None Include="Resources\scoreboard1.png" />
     <Content Include="Resources\student.png" />
     <None Include="Resources\training %281%29.png" />
+    <None Include="Resources\Testimonials.png" />
+    <None Include="Resources\user %283%29.png" />
+    <None Include="Resources\Uneti.png" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

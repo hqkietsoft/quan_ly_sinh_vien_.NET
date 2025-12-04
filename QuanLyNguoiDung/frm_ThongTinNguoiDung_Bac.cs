@@ -27,5 +27,10 @@ namespace Nhom2_QuanLySinhVien.QuanLyNguoiDung
 			txt_LoaiND_Bac.Enabled = false;
 			txt_MatKhau_Bac.Enabled = false;
 		}
+
+		private void guna2Button1_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

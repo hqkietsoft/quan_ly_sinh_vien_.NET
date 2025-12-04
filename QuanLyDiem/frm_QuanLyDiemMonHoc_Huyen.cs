@@ -20,11 +20,26 @@ namespace Nhom2_QuanLySinhVien.QuanLyDiem
 			InitializeComponent();
 			diem = Diem.DIEM;
 			diem.HienThiLenDataGridView(dgv_ThongTinDiem_Huyen);
+            PhanQuyen();
 		}
 
 		private void frm_QuanLyDiemMonHoc_Huyen_Load(object sender, EventArgs e)
 		{
             
+        }
+
+        public void PhanQuyen()
+        {
+            if (Program.loaiND == 3)
+            {
+                btn_DiemTBHK.Enabled = false;
+            }
+            if (Program.loaiND == 4)
+            {
+                btn_DiemTBHK.Enabled = false;
+                btn_DiemQuaTrinh_Huyen.Enabled = false;
+                btn_DiemThi_Khanh.Enabled = false;
+            }
         }
 
         private void btn_DiemThi_Huyen_Click(object sender, EventArgs e)

@@ -78,5 +78,23 @@ namespace Nhom2_QuanLySinhVien
 			login.GetAllByUsername(cbo_TenDN_Bac, txt_MatKhauCu_Bac);
 
 		}
+
+		private void checkBox1_CheckedChanged(object sender, EventArgs e)
+		{
+			if (checkBox1.Checked)
+			{
+				txt_MatKhauCu_Bac.UseSystemPasswordChar = false;
+				txt_MatKhauMoi_Bac.UseSystemPasswordChar = false;
+				txt_XacNhanMatKhauMoi_Bac.UseSystemPasswordChar = false;
+
+			}
+			else
+			{
+				txt_MatKhauCu_Bac.UseSystemPasswordChar = true;
+				txt_MatKhauMoi_Bac.UseSystemPasswordChar = true;
+				txt_XacNhanMatKhauMoi_Bac.UseSystemPasswordChar = true;
+			}
+
+		}
 	}
 }

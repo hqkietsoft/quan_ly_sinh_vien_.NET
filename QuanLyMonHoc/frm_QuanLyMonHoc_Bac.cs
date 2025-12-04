@@ -27,9 +27,9 @@ namespace Nhom2_QuanLySinhVien.QuanLyMonHoc
 			// 1 là admin, 2 là pdt, 3 là giáo viên, 4 là sinh viên
 			if (Program.loaiND == 3 || Program.loaiND == 4)// Giang Vien
 			{
-				btn_addNew_Bac.Visible = false;
-				btn_SuaMH_Bac.Visible = false;
-				btn_XoaMH_Bac.Visible = false;
+				btn_addNew_Bac.Enabled = false;
+				btn_SuaMH_Bac.Enabled = false;
+				btn_XoaMH_Bac.Enabled = false;
 			}
 			
 		}

@@ -15,9 +15,7 @@ namespace Nhom2_QuanLySinhVien
     {
         private string initialGioiTinh;
         private readonly SinhVien svSua;
-        private string HoDem, Ten, NgaySinh, GioiTinh, QueQuan, MaLop;
-
-        private int SoDT;
+        private string HoDem, Ten, NgaySinh, GioiTinh, QueQuan, MaLop,SoDT;
 
         private void btn_Huy_Click(object sender, EventArgs e)
         {
@@ -83,7 +81,7 @@ namespace Nhom2_QuanLySinhVien
                 NgaySinh == dateNgaySinh.Value.ToString() &&
                 gioiTinhMoi == initialGioiTinh &&
                 QueQuan == txt_QueQuan.Text &&
-                SoDT == int.Parse(txt_SoDT.Text) &&
+                SoDT ==txt_SoDT.Text &&
                 MaLop == cb_MaLop.Text)
                 {
                     MessageBox.Show("Bạn chưa sửa dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
